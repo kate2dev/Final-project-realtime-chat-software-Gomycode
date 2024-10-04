@@ -1,24 +1,24 @@
 import CustomPrimaryButton from "../../shared/components/CustomPrimaryButton";
-import { useNavigate } from "react-router-dom"; // Use useNavigate instead of useHistory
+import { useNavigate } from "react-router-dom"; // Using useNavigate for navigation
 import { Tooltip } from "@mui/material";
 import RedirectInfo from "../../shared/components/RedirectInfo";
 
-// Message for invalid form
+// Function to provide form validation message when form is invalid
 const getFormNotValidMessage = () => {
   return "Enter correct e-mail address and password should contain between 6 and 12 characters";
 };
 
-// Message for valid form
+// Function to provide form validation message when form is valid
 const getFormValidMessage = () => {
   return "Press to log in!";
 };
 
 const LoginPageFooter = ({ handleLogin, isFormValid }) => {
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate(); // useNavigate hook for navigation
 
-  // Function to navigate to the register page
+  // Handler function to navigate to the register page
   const handlePushToRegisterPage = () => {
-    navigate("/register"); // Use navigate instead of history.push
+    navigate("/register");
   };
 
   return (
