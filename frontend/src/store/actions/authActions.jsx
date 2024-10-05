@@ -5,6 +5,9 @@ export const authActions = {
   SET_USER_DETAILS: "AUTH.SET_USER_DETAILS",
 };
 
+
+
+// This function returns an object with login and register methods that dispatch their respective actions.
 export const getActions = (dispatch) => {
   return {
     login: (userDetails, history) => dispatch(login(userDetails, history)),
@@ -13,6 +16,8 @@ export const getActions = (dispatch) => {
   };
 };
 
+
+// This function returns an object with login and register methods that dispatch their respective actions.
 const setUserDetails = (userDetails) => {
   return {
     type: authActions.SET_USER_DETAILS,
@@ -20,6 +25,12 @@ const setUserDetails = (userDetails) => {
   };
 };
 
+
+// This is an async action creator that:
+
+// Calls the login API
+// Dispatches an alert message if there's an error
+// If successful, stores user details in localStorage, dispatches the setUserDetails action, and navigates to the dashboard
 const login = (userDetails, history) => {
   return async (dispatch) => {
     const response = await api.login(userDetails);
