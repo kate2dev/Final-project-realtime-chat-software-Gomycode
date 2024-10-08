@@ -6,8 +6,11 @@ const apiClient = axios.create({
   timeout: 2000,
 });
 
+// * These functions intercept outgoing requests before they are sent to the server.
 apiClient.interceptors.request.use(
   (config) => {
+    // The first interceptor checks for a user item in local storage.
+    // If found, it parses it as JSON, extracts the token property, and sets the Authorization header in the request with a Bearer ${ token } format.This is a common way to send authentication tokens with API requests.
     const userDetails = localStorage.getItem("user");
 
     if (userDetails) {
