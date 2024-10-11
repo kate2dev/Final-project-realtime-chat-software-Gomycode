@@ -1,5 +1,5 @@
 import * as api from "../../api";
-// import { openAlertMessage } from "./alertActions";
+import { openAlertMessage } from "./alertActions";
 import { useNavigate } from "react-router-dom";
 
 export const authActions = {
