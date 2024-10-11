@@ -3,7 +3,7 @@ import './App.css'
 import LoginPage from './authPages/LoginPage/LoginPage';
 import Dashboard from './Dashboard/Dashboard';
 import RegisterPage from './authPages/RegisterPage/RegisterPage';
-import AlertNotification from '../src/shared/components/AlertNotification.jsx';
+import AlertNotification from '../src/shared/components/AlertNotification';
 
 function App() {
 
