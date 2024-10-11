@@ -4,11 +4,14 @@ import LoginPageHeader from "./LoginPageHeader";
 import LoginPageInputs from "./LoginPageInputs";
 import LoginPageFooter from "./LoginPageFooter";
 import { validateLoginForm } from "../../shared/utils/validators";
-
+import { connect } from "react-redux";
+import { getActions } from "../../store/actions/authActions";
+// It allows you to programmatically navigate between different routes within your React application.
+import { useNavigate } from "react-router-dom";
 
 // /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
-const LoginPage = () => {
-
+const LoginPage = ({ login }) => {
+  const history = useNavigate()
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [isFormValid, setIsFormValid] = useState(false);
@@ -42,4 +45,10 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+const mapActionsToProps = (dispatch) => {
+  return {
+    ...getActions(dispatch),
+  };
+};
+
+export default connect(null, mapActionsToProps)(LoginPage);
