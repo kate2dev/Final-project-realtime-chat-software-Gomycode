@@ -9,7 +9,7 @@ import { getActions } from "../../store/actions/authActions";
 import { useNavigate } from "react-router-dom";
 
 const RegisterPage = ({ register }) => {
-  const navigate = useNavigate(); // Initialize navigate
+  const history = useNavigate(); // Initialize navigate
 
   const [mail, setMail] = useState("");
   const [username, setUsername] = useState("");
@@ -24,7 +24,7 @@ const RegisterPage = ({ register }) => {
       username,
     };
 
-    register(userDetails, navigate); // Use navigate instead of history
+    register(userDetails, history); // Use navigate instead of history
   };
 
   useEffect(() => {
@@ -58,8 +58,16 @@ const RegisterPage = ({ register }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return getActions(dispatch); // Use getActions to return the action creators
+// const mapDispatchToProps = (dispatch) => {
+//   return getActions(dispatch); // Use getActions to return the action creators
+// };
+
+// export default connect(null, mapDispatchToProps)(RegisterPage);
+
+const mapActionsToProps = (dispatch) => {
+  return {
+    ...getActions(dispatch),
+  };
 };
 
-export default connect(null, mapDispatchToProps)(RegisterPage);
+export default connect(null, mapActionsToProps)(RegisterPage);
