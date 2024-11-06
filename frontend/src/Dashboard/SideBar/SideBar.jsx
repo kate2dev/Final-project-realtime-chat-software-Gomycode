@@ -1,5 +1,6 @@
-import React from "react";
+
 import { styled } from "@mui/system";
+import MainPageButton from "./MainPageButton";
 
 const MainContainer = styled("div")({
     flexGrow: 1,
@@ -9,7 +10,9 @@ const MainContainer = styled("div")({
 });
 
 const Messenger = () => {
-    return <MainContainer></MainContainer>;
+    return <MainContainer>
+        <MainPageButton />
+    </MainContainer>;
 };
 
 export default Messenger;
