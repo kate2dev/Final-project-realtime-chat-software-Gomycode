@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import CustomPrimaryButton from "../../shared/components/CustomPrimaryButton";
 import AddFriendDialog from "./AddFriendDialog";
 
