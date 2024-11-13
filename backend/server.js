@@ -3,7 +3,7 @@ const http = require("http");
 const cors = require("cors");
 const mongoose = require("mongoose");
 require("dotenv").config();
-
+const socketServer = require("./socketServer");
 const authRoutes = require("./routes/authRoutes");
 
 const PORT = process.env.PORT || process.env.API_PORT;
@@ -16,6 +16,8 @@ app.use(cors());
 app.use("/api/auth", authRoutes);
 
 const server = http.createServer(app);
+// Establish WebSocket connections with clients, allowing for real-time, bidirectional communication.
+socketServer.registerSocketServer(server);
 
 mongoose
   .connect(process.env.MONGO_URI)
