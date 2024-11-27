@@ -14,12 +14,14 @@ import authReducer from './reducers/authReducer'
 import alertReducer from './reducers/alertReducer'
 import friendsReducer from "./reducers/friendsReducer";
 import chatReducer from "./reducers/chatReducer";
+import roomReducer from "./reducers/roomReducer";
 // combineReducers is used to create a rootReducer by combining all individual reducers. Here, you're only using one reducer, authReducer, to manage the auth slice of the state.
 const rootReducer = combineReducers({
     auth: authReducer,
     alert: alertReducer,
     friends: friendsReducer,
     chat: chatReducer,
+    room: roomReducer,
 });
 
 
