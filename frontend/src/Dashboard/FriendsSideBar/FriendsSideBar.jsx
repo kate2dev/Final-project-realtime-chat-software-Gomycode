@@ -1,4 +1,4 @@
-import React from "react";
+
 import { styled } from "@mui/system";
 import AddFriendButton from "./AddFriendButton";
 import FriendsTitle from "./FriendsTitle";
@@ -11,7 +11,8 @@ const MainContainer = styled("div")({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    backgroundColor: "#2F3136",
+    // backgroundColor: "#2F3136",
+    backgroundColor: "#11204D",
 });
 
 const FriendsSideBar = () => {
