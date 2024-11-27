@@ -8,7 +8,8 @@ const MainContainer = styled("div")({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  backgroundColor: "#202225",
+  // backgroundColor: "#202225",
+  backgroundColor: "#1E2226",
 });
 
 const SideBar = () => {
