@@ -35,7 +35,9 @@ const Dashboard = ({ setUserDetails, isUserInRoom }) => {
       <Messenger />
       <AppBar />
       {isUserInRoom && <Room />}
+      
     </Wrapper>
+    
   );
 };
 

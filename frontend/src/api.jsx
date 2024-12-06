@@ -2,7 +2,7 @@ import axios from "axios";
 import { logout } from "./shared/utils/auth";
 
 const apiClient = axios.create({
-  baseURL: "http://localhost:5002/api",
+  baseURL: "http://localhost:5179/api",
   timeout: 2000,
 });
 
@@ -54,7 +54,9 @@ export const register = async (data) => {
 // secure routes
 export const sendFriendInvitation = async (data) => {
   try {
+    console.log(data)
     return await apiClient.post("/friend-invitation/invite", data);
+  
   } catch (exception) {
     checkResponseCode(exception);
     return {
